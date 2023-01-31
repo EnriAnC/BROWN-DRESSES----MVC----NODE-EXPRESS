@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Cormorant+SC:wght@300;400;600;700&display=swap');
+:root{
+    --color1: #f3c443;
+    --color2: #c7502b;
+    --color3: #f3c443;
+    --black-smooth: #1d1c1c;
+}
+*{
+    margin: 0;
+    /* font-family: 'Alfa Slab One', cursive; */
+    
+    /* font-family: 'Cormorant SC', serif; */
+    box-sizing: content-box;
+}
+html{
+    max-width: 100%;
+    font-family: 'Anton', sans-serif;
+}
+body{
+    background-color: var(--color1);
+    min-height: 100vh;
+    position: relative;
+}
+
+.header{
+    position: relative;
+    max-height: 100%;
+    width: 7rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+.header a{
+    text-decoration: none;
+    color: black;
+}
+.header h1{
+    position: relative;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: .25rem;
+}
+/* DRESSES */
+.header h1 span:nth-child(3){
+    position: relative;
+    top: -.75rem;
+}
+
+.nav-flotante{
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    width: 48px;
+    flex-direction: column;
+    padding: 1rem .25rem 1rem 0;
+    background-color: rgb(29, 28, 28);
+    row-gap: .6rem;
+    border-radius: 0 1rem 1rem 0;
+    box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.589);
+    bottom: 35vh;
+}
+.nav-flotante a svg [fill]{
+    fill: var(--color1);
+}
+.nav-flotante a svg:hover [fill]{
+    animation: fill-svg 3s linear forwards;
+}
+.nav-flotante::before{
+    content: "";
+    height: 58px;
+    width: 58px;
+    position: absolute;
+    z-index: -1;
+    right: -1.2rem;
+    bottom: 4.5rem;
+    background-color: var(--black-smooth);
+    border-radius: 0 100%;
+    transform: rotateZ(45deg)
+}
+@keyframes fill-svg {
+    0%{
+        fill: none;
+    }
+    100%{
+        fill: #fcb900;
+    }
+}
+
+.nav-flotante a svg:hover{
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: nav-icon 3s linear forwards;
+}
+
+@keyframes nav-icon {
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (max-width: 1020px){
+
+    .nav-flotante{
+        width: 100%;
+        height: 5vh;
+        z-index: 2000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: .75rem .25rem 1.5rem 0;
+        background-color: rgb(29, 28, 28);
+        row-gap: 0;
+        border-radius: 0;
+        box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.589);
+        bottom: 0;
+        left: 0;
+    }
+    .nav-flotante::before{
+        content: none;
+    }
+    #homeIcon{
+        position: relative;
+        top: -1.5rem;
+        height: 3em;
+        width: 3em;
+        background-color: var(--color1);
+        border-radius: 50%;
+        padding: 1.5rem;
+        border: solid 5px rgb(29, 28, 28);
+    }
+    #homeIcon svg [fill]{
+        fill: rgb(29, 28, 28);
+        stroke: rgb(29, 28, 28);
+    }
+}
+
+/* ICONOS HOVER */
+#userIcon:hover::before{
+    content: "Iniciar sesión";
+    position: absolute;
+    right: -8.25rem;
+    top: 1.5rem;
+    background-color: rgb(29, 28, 28);
+    color: var(--color1);
+    padding: .25rem 1rem;
+    animation: text-icon-hover .25s linear forwards;
+}
+#homeIcon:hover::before{
+    content: "inicio";
+    position: absolute;
+    right: -5.1rem;
+    top: 5.5rem;
+    background-color: rgb(29, 28, 28);
+    color: var(--color1);
+    padding: .25rem 1rem;
+    animation: text-icon-hover .25s linear forwards;
+}
+#cartIcon:hover::before{
+    content: "Carro de compras";
+    position: absolute;
+    right: -9.9rem;
+    top: 9.5rem;
+    background-color: rgb(29, 28, 28);
+    color: var(--color1);
+    padding: .25rem 1rem;
+    animation: text-icon-hover .25s linear forwards;
+}
+@keyframes text-icon-hover {
+    0%{
+        opacity: 0;
+        transform: translate(-1rem,0);
+    }
+    60%{
+        transform: translate(.3rem,0);    
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0rem,0);
+    }
+}
+@media (max-width:1020px) {
+    #searchIcon:hover::before,
+    #homeIcon:hover::before,
+    #cartIcon:hover::before{
+        content: none   ;
+        animation: none;
+    }
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    width: 100%;
+    height: 42vh;
+    background-color: var(--color1);
+    text-align: center;
+    font-size: 6rem;
+}
+
+.hero-text{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1rem;
+    white-space: pre-wrap;
+}
+/* UNA TIENDA */
+.hero-text span:nth-child(1){
+    line-height: 10rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 60vh;
+    z-index: 990;
+    line-height: 5rem;
+}
+/* DOS ESTILOS */
+.hero-text span:nth-child(3){
+    background-color: var(--color1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 990;
+    line-height: 5rem;
+}
+@media (max-width:628px) {
+    .hero-text{
+        letter-spacing: 0;
+
+    }
+    .hero-text span:nth-child(1){
+        font-size: 5rem;
+        bottom: 56vh;
+
+    }
+    .hero-text span:nth-child(3){
+        font-size: 4.75rem;
+    }
+}
+@media (max-width:330px) {
+    .hero{
+        height: 50vh;
+    }
+    .hero-text span{
+        white-space: pre-wrap;
+    }
+
+    .hero-text span:nth-child(1){
+        font-size: 5rem;
+        bottom: 60vh;
+    }
+    .hero-text span:nth-child(3){
+        font-size: 4.5rem;
+
+    }
+}
+@media (max-width:359px) {
+    .hero-text span{
+        white-space: pre-wrap;
+    }
+
+    .hero-text span:nth-child(1){
+        font-size: 5rem;
+        bottom: 60vh;
+    }
+    .hero-text span:nth-child(3){
+        font-size: 4.5rem;
+
+    }
+}
+
+
+/* INVENTARIO NUEVO - CARRUSEL */
+.inventario-nuevo{
+    position: relative;
+    background-color: var(--color2);
+    z-index: 1000;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Que hay de nuevo? */
+.inventario-nuevo h2{
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+.carrusel-inventario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 2rem;
+    margin-top: -2rem;
+    padding: 1.5rem 0;
+}
+.carrusel-inventario div:nth-child(1){
+    display: flex;
+    animation: scroll 25s linear infinite;
+    column-gap: 2rem;
+}
+.carrusel-inventario div:nth-child(2){
+    display: flex;
+    animation: scroll 30s linear infinite;
+    column-gap: 2rem;
+}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc((-275px - 2rem) * 4))}
+}
+
+.carrusel-inventario div a {
+    display: block;
+    position: relative;
+    width: 275px;
+    height: 275px;
+
+}
+.sumarUno{
+    position: absolute;
+    z-index: 1990;
+    bottom: 0rem;
+    right: .3rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: var(--color1);
+    /* animation: masUno 1s linear forwards; */
+    text-shadow: 1px 1px 2.5px black;
+    z-index: 2000;
+    transform: scale(0);
+}
+/* @keyframes masUno {
+    0%{
+    }
+    75%{
+        bottom: 2.25rem;
+    }
+    100%{
+        bottom: 2.25rem;
+        opacity: 0;
+    }
+} */
+.carrusel-inventario div a .detallesItem{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 275px;
+    right: 0;
+    left: 0;
+    top: 0px;
+    opacity: 0;
+    transition: all .75s;
+    color: var(--color1);
+    text-shadow: 0 0 10px black;
+}
+.carrusel-inventario div a p:hover{
+    opacity: 1;
+}
+@media (max-width:1020px) {
+    .carrusel-inventario div a p{
+        opacity: 1;
+    }
+}
+.card{
+    width: 275px;
+    height: 275px;
+    object-fit: cover;
+}
+.card img{
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background-color: white;
+    transform: scale(1);
+}
+.card:hover img{
+    transform: scale(1.125);
+}
+.card::before{
+    transition: all 1s ease;
+}
+
+.card svg{
+    position: absolute;
+    z-index: 2000;
+    bottom: -1rem;
+    right: -1rem;
+    cursor:default;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.658);
+    border-radius: 50%;
+    background-color: var(--color1);
+}
+
+.card svg:hover{
+    background-color: var(--color2)
+}
+
+/* INVENTARIO GENERAL */
+.inventario-general{
+    position: relative;
+    text-align: center;
+    height: auto;
+    z-index: 1000;
+    background-color: var(--color3);
+    padding: 1rem 0rem .5rem 0rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width:520px) {
+    .inventario-general{
+
+        padding: 1rem 0rem 2.5rem 0rem;
+
+    }
+}
+
+/* STOCK */
+.inventario-general h2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3.5rem;
+}
+
+/* OPCIONES STOCK */
+/* .inventario-general span{
+    font-size: 2rem;
+    background-color: black;
+    color: var(--color1);
+    padding: 0 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+} */
+/* .inventario-general span:hover{
+    color: rgb(248, 196, 99);
+} */
+
+.flex-inventario{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#next, #back{
+    display: none;
+}
+
+.container-inventario{
+    display: flex;
+    column-gap: 1.5rem;
+    margin-bottom: 1rem;
+    overflow-x: scroll;
+    scrollbar-color: black white;
+    scroll-behavior:smooth;
+    scrollbar-width: thin;
+    overflow-y: hidden;
+}
+@media (max-width: 1020px) {
+    .container-inventario{
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+    }
+}
+
+.container-inventario img{
+    scroll-snap-align: none center;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.575);
+}
+::-webkit-scrollbar{
+    background-color: var(--color1);
+    height: .5rem;
+    width: .25rem;
+}
+.container-inventario .card:hover::before{
+    animation: none;
+}
+#inventario1 .card, #inventario2 .card{
+    position: relative;
+}
+#inventario1 .card:hover img, #inventario2 .card:hover img{
+    transform: none;
+}
+#inventario1 .sumarUno, #inventario2 .sumarUno{
+    bottom: 2rem;
+    right: 2.25rem;
+}
+#inventario1 .card svg, #inventario2 .card svg{
+    bottom: 1rem;
+    right: 1rem;
+}
+#inventario1 .card .detallesItem, #inventario2 .card .detallesItem{
+    position: absolute;
+    width: calc(275px - .5rem * 4);
+    height: calc(22.5% - .5rem * 2);
+    font-size: 1.05rem;
+    bottom: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
+    color: var(--color1);
+    background-color: rgba(17, 15, 15, 0.486);
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+}
+
+.precio{
+    align-self: center;
+    font-size: 1.2rem;
+    letter-spacing: .25rem;
+    position: absolute;
+    bottom: .75rem;
+}
+
+footer{
+    min-height: 5vh;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color2);
+}
+@media (max-width: 1020px) {
+    footer{
+        bottom: 10vh;
+        margin-top: 10vh;
+    }
+}

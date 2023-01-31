@@ -1,0 +1,33 @@
+<form class="contact-form">
+    <legend>Registro</legend>
+    
+    <label for="name">Nombre de usuario:</label>
+    <input type="text" required name="usuario" 
+        placeholder="Escribe tu nombre" 
+        title="El Nombre solo acepta letras sin espacios"
+        pattern="^([A-Za-z0-9]+|-[A-Za-z0-9]+|_[A-Za-z0-9]+){1,50}$">
+
+    {{!-- <label for="correo">Correo</label>
+    <input type="email" required name="correo" 
+        placeholder="Escribe tu email" 
+        title="Email incorrecto"
+        pattern="^[A-Za-z0-9]+(\.[A-Za-z0-9]+|-[A-Za-z0-9]+|_[A-Za-z0-9]+)*@[A-Za-z0-9-]+[\.]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{1,15})$">
+     --}}
+    <label for="password">Contraseña:</label>
+    <input type="password" required name="password" 
+        placeholder="Contraseña" 
+        title="La contraseña es requerida"
+        pattern="[A-Za-z0-9]{1,255}$">
+{{!-- 
+    <label for="fecha">Fecha de nacimiento</label>
+    <input name="fecha" type="date"
+        placeholder="Escribe tus comentarios"
+        required
+        data-pattern="^(\n|.){1,255}$"> --}}
+    
+    <input type="submit" value="Registrarse">
+
+    <div class="contact-form-response none">
+        <p>Los datos han sido enviados</p>
+    </div>
+</form>

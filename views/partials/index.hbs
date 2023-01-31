@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="hero">
+        <div class="hero-text">
+            <span>UNA TIENDA</span><br>
+            <span>DOS ESTILOS</span>
+        </div>
+    </div>
+    <div class="inventario-nuevo">
+        <h2>¿Que hay de nuevo?</h2>
+        <div class="carrusel-inventario">
+        </div>
+    </div>
+    <div class="inventario-general">
+        <h2>STOCK</h2>
+        <div class="flex-inventario">
+        </div>
+    </div>
+</div>
+
+<template id="item-template">
+    <a id="item-id" productNumber = '' href="./productos/producto" class="card">
+        <img src="" alt="" id="item-img">
+        <p id="item-detalles" class="detallesItem"></p>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+            <use xlink:href="#add-circle">
+        </svg>
+        <p class="sumarUno">+1</p>
+    </a>
+</template>
